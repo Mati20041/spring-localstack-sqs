@@ -8,13 +8,13 @@ import pl.gizycki.sqsmigration.SqsProducer
 import java.util.concurrent.atomic.AtomicInteger
 
 @Configuration
-@ConditionalOnProperty("schedule")
+@ConditionalOnProperty("sqs.schedule")
 @EnableScheduling
 class SchedulerConfig(val sqsProducer: SqsProducer) {
     val counter = AtomicInteger(0)
 
 
-    @Scheduled
+    @Scheduled(fixedRate = 10000) // ten seconds
     fun sendMsg() {
         sqsProducer.send("Scheduled message no ${counter.incrementAndGet()}")
     }
