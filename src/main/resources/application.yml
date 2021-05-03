@@ -1,0 +1,35 @@
+logging.level.com.amazonaws.util.EC2MetadataUtils: off
+logging.level.com.amazonaws.internal.InstanceMetadataServiceResourceFetcher: off
+
+cloud.aws.credentials.access-key: 'a'
+cloud.aws.credentials.secret-key: 'a'
+cloud.aws.credentials.instance-profile: false
+cloud.aws.region.static: eu-west-1
+cloud.aws.stack.auto: false
+
+sqs:
+  queueName: 'workshops-queue'
+
+---
+
+spring.profiles: listener
+sqs:
+  listener: true
+
+---
+
+spring.profiles: producer
+sqs:
+  producer: true
+
+---
+
+spring.profiles: localhost
+sqs.endpoint: http://localhost:4566
+
+---
+
+spring.profiles: scheduler
+sqs:
+  producer: true
+  schedule: true

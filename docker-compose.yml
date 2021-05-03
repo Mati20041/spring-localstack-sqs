@@ -1,0 +1,18 @@
+services:
+  localstack:
+    image: localstack/localstack-full
+    ports:
+      - "4566:4566"
+      - "8081:8081"
+    environment:
+      - SERVICES=sqs
+      - DEBUG=1
+      - START_WEB=1
+      - PORT_WEB_UI=8081
+    volumes:
+      - ./docker-entrypoint-initaws.d:/docker-entrypoint-initaws.d
+    healthcheck:
+      test: test -f /ready
+      start_period: 10s
+      retries: 15
+      interval: 5s
