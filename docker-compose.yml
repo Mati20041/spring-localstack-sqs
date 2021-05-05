@@ -5,7 +5,7 @@ services:
       - "4566:4566"
       - "8081:8081"
     environment:
-      - SERVICES=sqs
+      - SERVICES=sqs,s3
       - DEBUG=1
       - START_WEB=1
       - PORT_WEB_UI=8081

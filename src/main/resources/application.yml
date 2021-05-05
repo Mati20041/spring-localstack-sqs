@@ -10,6 +10,8 @@ cloud.aws.stack.auto: false
 sqs:
   queueName: 'workshops-queue'
 
+
+
 ---
 
 spring.profiles: listener
@@ -26,7 +28,6 @@ sqs:
 
 spring.profiles: localhost
 sqs.endpoint: http://localhost:4566
-
 ---
 
 spring.profiles: scheduler

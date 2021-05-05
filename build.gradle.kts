@@ -13,6 +13,7 @@ java.sourceCompatibility = JavaVersion.VERSION_11
 
 repositories {
 	mavenCentral()
+	jcenter()
 }
 
 extra["springCloudVersion"] = "Hoxton.SR11"
@@ -23,6 +24,7 @@ dependencies {
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
 	implementation("org.springframework.cloud:spring-cloud-starter-aws")
+	implementation("com.spring.loader:s3-loader:3.0.0")
 	implementation("org.springframework.cloud:spring-cloud-starter-aws-messaging")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")

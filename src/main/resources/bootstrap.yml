@@ -1,0 +1,6 @@
+#spring.cloud.config.server:
+#  awss3:
+#    region: eu-west-1
+#    bucket: my-bucket
+sqs.endpoint: http://localhost:4566
+cloud.aws.region.static: eu-west-1
